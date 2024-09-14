@@ -6,9 +6,9 @@ const { check, validationResult } = require('express-validator');
 require('dotenv').config(); // This will load the .env file
 app.use(express.json()); // For parsing application/json
 app.use(express.urlencoded({ extended: true })); 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`server is running on port ${port}`);
 });
 

@@ -19,7 +19,7 @@ class UserController {
         const token = jwt.sign({ id: newUser.rows[0].id, role: newUser.rows[0].role }, process.env.JWT_SECRET);
         done(token);
       } catch (error) {
-        return reject('Server error');
+        return reject(constant.INVALID_INPUT);
       }
     })
   }
@@ -42,7 +42,7 @@ class UserController {
         const token = jwt.sign({ id: user.rows[0].id, role: user.rows[0].role }, process.env.JWT_SECRET,  { expiresIn: '24h' }  );
         done(token);
       } catch (error) {
-        return reject('Server error');
+        return reject(constant.INVALID_INPUT);
       }
     })
 
