@@ -12,12 +12,12 @@ Add and remove products from the cart.
  - Tech Stack
    Backend: Node.js, Express.js
    Database: PostgreSQL
-   Libraries:
-    express-validator - Validation middleware for user inputs.
-    jsonwebtoken - JWT authentication.
-    bcryptjs - Password hashing.
-    pg - PostgreSQL client for Node.js.
-    dotenv - Manage environment variables.
+ - Libraries:
+    - express-validator - Validation middleware for user inputs.
+    - jsonwebtoken - JWT authentication.
+    - bcryptjs - Password hashing.
+    - pg - PostgreSQL client for Node.js.
+    - dotenv - Manage environment variables.
  - Prerequisites
     Node.js (v14 or higher)
     PostgreSQL (v12 or higher)
