@@ -9,6 +9,7 @@ let cont={
     DELETE_PRODUCT_OK:"Product Deleted Successfully",
     PRODUCT_FOUND_OK:"Product Found",
     CART_ITEMS_ADDED_OK:"Items Added Into Cart Successfully",
-    CART_ITEMS_REMOVED_OK:"Items Removed From Cart Successfully"
+    CART_ITEMS_REMOVED_OK:"Items Removed From Cart Successfully",
+    INVALID_INPUT:"Please provide valid information"
 }
 module.exports = cont;

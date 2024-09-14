@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const authenticateToken = (req, res, next) => {
-  // Get the token from the authorization header
+  // Get the bearer token from the authorization header
   const isToken = req.headers['authorization'] && req.headers['authorization'].split(' ')[1];
   const token = req.headers['authorization'].split(' ')[1];
   if (!isToken) {
@@ -9,7 +9,7 @@ const authenticateToken = (req, res, next) => {
   }
 
   try {
-    // Verify the token with the secret key
+    // Verify the bearer token with the secret key
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded; // Attach the decoded user data (id, role) to the request object
     next(); // Continue to the route handler

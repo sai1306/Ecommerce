@@ -1,5 +1,5 @@
 const pool = require('./../db');
-
+const constant = require('./../Constant')
 class SellerController {
     constructor(){}
     //Add Product Handler
@@ -17,7 +17,7 @@ class SellerController {
                 );
                 return done(newProduct.rows[0]);
             } catch (error) {
-                return reject('Server error');
+                return reject(constant.INVALID_INPUT);
             }
         })
     }
@@ -40,7 +40,7 @@ class SellerController {
               }
               done(updatedProduct.rows[0]);
             } catch (error) {
-              return reject('Server error');
+              return reject(constant.INVALID_INPUT);
             }
         })
 
@@ -58,7 +58,7 @@ class SellerController {
               await pool.query('DELETE FROM products WHERE id = $1 AND seller_id = $2', [id, user.id]);
               return done('Product deleted');
             } catch (error) {
-              return reject('Server error');
+              return reject(constant.INVALID_INPUT);
             }
         })
         

@@ -1,5 +1,5 @@
 const pool = require('./../db');
-
+const constant = require('./../Constant')
 class BuyerController {
     constructor() { }
 
@@ -17,8 +17,8 @@ class BuyerController {
                 return done(products.rows);
             } catch (error) {
                 console.error('Error fetching products:', error); // Log full error details
-                return reject('Server error');
-            }
+                return reject(constant.INVALID_INPUT);
+              }
         })
     }
 
@@ -37,7 +37,7 @@ class BuyerController {
                 );
                 return done(cartItem.rows[0]);
               } catch (error) {
-                return reject('Server error');
+                return reject(constant.INVALID_INPUT);
               }
         })
     }
@@ -50,7 +50,7 @@ class BuyerController {
                 await pool.query('DELETE FROM cart WHERE id = $1 AND user_id = $2', [id, user.id]);
                 return done('Item removed from cart');
               } catch (error) {
-                return reject('Server error');
+                return reject(constant.INVALID_INPUT);
               }
         })
     }
